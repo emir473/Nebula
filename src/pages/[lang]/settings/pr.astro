@@ -39,23 +39,6 @@ import { MARKETPLACE_ENABLED } from "astro:env/client";
             }}
             both={{enabled: false}}
         />
-        <!-- SettingsCard
-          title="Open in"
-          description="Choose how to open your sites"
-          input={{ input: false }}
-          button={{ name: "Set", id: "setopenin" }}
-          select={{
-            select: true,
-            name: "openin",
-            options: [
-              { name: "Embed", value: "embed", disabled: false },
-              { name: "Direct", value: "direct", disabled: false },
-              { name: "About:Blank", value: "a:b", disabled: false },
-              { name: "Blob", value: "blob", disabled: false },
-            ],
-            }}
-            both={{enabled: false}}
-        / -->
         <SettingsCard
           title="Search Engine"
           description="Choose your search engine"
@@ -133,23 +116,13 @@ import { MARKETPLACE_ENABLED } from "astro:env/client";
   <ToastWrapper client:load>
     <Toast
       toastProp={{
-        toastType: "success",
         text: "Successfully changed proxy!",
         class: "proxyMessage",
       }}
       client:load
     />
-    <!-- Toast
-      toastProp={{
-        toastType: "success",
-        text: "Saved selection!",
-        class: "openInMessage",
-      }}
-      client:load
-    /-->
     <Toast
       toastProp={{
-        toastType: "success",
         text: "Saved Search Engine Selection!",
         class: "searchEngineMessage",
       }}
@@ -157,7 +130,6 @@ import { MARKETPLACE_ENABLED } from "astro:env/client";
     />
     <Toast
       toastProp={{
-        toastType: "success",
         text: "Wisp server selected!",
         class: "wispUrlMessage",
       }}
@@ -165,7 +137,6 @@ import { MARKETPLACE_ENABLED } from "astro:env/client";
       />
     <Toast
       toastProp={{
-        toastType: "success",
         text: "Transport set!",
         class: "transportMessage",
       }}

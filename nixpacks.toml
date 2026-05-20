@@ -1,8 +1,8 @@
 [phases.setup]
-nixPackages = ["nodejs_20", "corepack"]
+nixPackages = ["nodejs_20", "pnpm"]
 
 [phases.install]
-cmds = ["corepack enable", "corepack prepare pnpm@latest --activate", "pnpm install"]
+cmds = ["pnpm install"]
 
 [phases.build]
 cmds = ["pnpm run build"]

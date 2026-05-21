@@ -398,3 +398,4 @@ There are a couple of configuration options for Nebula. The defaults are fine mo
 ....
 "update new"
 refresh
+"update"

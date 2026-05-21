@@ -13,7 +13,6 @@ import { defineConfig, envField } from "astro/config";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import { version } from "./package.json";
 import { parsedDoc } from "./server/config.js";
-const workerwarePath = fileURLToPath(new URL("./workerware/src", import.meta.url));
 
 export default defineConfig({
     site: parsedDoc.seo.enabled ? parsedDoc.seo.domain || process.env.SITE : 'http://localhost:4321',
@@ -88,11 +87,6 @@ export default defineConfig({
                     {
                         src: `${baremuxPath}/**/*`.replace(/\\/g, "/"),
                         dest: "baremux",
-                        overwrite: false
-                    },
-                    {
-                        src: `${workerwarePath}/**/*`.replace(/\\/g, "/"),
-                        dest: "workerware",
                         overwrite: false
                     }
                 ]

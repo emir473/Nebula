@@ -1,6 +1,6 @@
 [marketplace]
-enabled = false
-psk = "NebulaSecure2026"
+enabled = false # Turn on or off the marketplace entirely
+psk = "NebulaSecure2026" # Generiertes Passwort für dich
 level = 1
 
 [seo]
@@ -8,23 +8,22 @@ enabled = false
 domain = "https://nebulaproxy.io"
 
 [db]
-name = "main"
-username = "root"
-password = ""
-postgres = true # HIERMIT aktivieren wir die externe Datenbank!
+name = "database" # Your database name
+username = "username" # The username of your DB (SQLITE just ignores this)
+password = "password" # The password to your DB (SQLITE ignores this)
+postgres = false # Auf false lassen, damit er SQLite direkt im Projekt nutzt
 
-[postgres] 
-# Railway füllt diese Verbindung im Hintergrund über deine Variablen aus
-domain = "${{MongoDB.MONGODB_URL}}" 
-port = 27017
+[postgres] # Set the "domain" to either and ip address or a actual domain 
+domain = ""
+port = 5432
 
 [server.server]
 port = 8080
 wisp = true
-logging = true
+logging = true # Nützlich, damit wir in den Railway-Logs sehen, was passiert
 
 [masqr]
 enabled = false
-failed = "failed.html"
-whitelisted = ["https://nebulaservices.org"]
-url = ""
+failed = "failed.html" # Default masqr failed page. For per-site failed pages, create a folder named "Masqrd" and create DOMAIN.TLD.html
+whitelisted = ["https://nebulaservices.org"] # List of domains to skip masqr
+url = "" # Masqr license URL

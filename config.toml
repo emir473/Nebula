@@ -8,13 +8,14 @@ enabled = false
 domain = "https://nebulaproxy.io"
 
 [db]
-name = "database"
-username = "username"
-password = "password"
-postgres = false # HIERMIT schalten wir Postgres komplett aus!
+name = "railway"
+username = "postgres"
+password = ""
+postgres = true # Unbedingt auf true, da wir Postgres nutzen!
 
 [postgres] 
-domain = ""
+# Wir lassen domain leer, damit die App deine DATABASE_URL-Variable nutzt
+domain = "" 
 port = 5432
 
 [server.server]
